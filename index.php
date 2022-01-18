@@ -1,12 +1,14 @@
 <?php
 
-require_once "src/general.php";
+
+require_once "src/SeederClass.php";
 
 
-$tid = "123456789";
-$cid = "123456";
 
-$general = new general($tid,$cid);
+$Seeder = new SeederClass();
 
 
-$general->build();
+
+$Seeder->setSender('Origin', '192.168.0.2','Party sending the information');
+$Seeder->setReceiver('Target','10.2.1.3','Intended recipient of the information');
+print $Seeder->getxml();
