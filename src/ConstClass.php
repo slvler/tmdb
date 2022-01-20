@@ -1,16 +1,21 @@
 <?php
 
 
-class ConstClass {
+class ConstClass{
 
-    private $ApiUrl;
-    private $XmlUrl;
-    private $Tid;
-    private $Mid;
-    private $ClientId;
-    private $ClientPass;
-    private $ClientUser;
+    protected $ApiUrl;
+    protected $XmlUrl;
+    protected $Tid;
+    protected $Mid;
+    protected $ClientId;
+    protected $ClientPass;
+    protected $ClientUser;
 
+
+    public function __construct($ApiUrl)
+    {
+        $this->ApiUrl = $ApiUrl;
+    }
 
 }
 ?>
