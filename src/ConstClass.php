@@ -12,9 +12,10 @@ class ConstClass{
     protected $ClientUser;
 
 
-    public function __construct($ApiUrl)
+    public function __construct($ApiUrl,$XmlUrl)
     {
         $this->ApiUrl = $ApiUrl;
+        $this->XmlUrl = $XmlUrl;
     }
 
 }
