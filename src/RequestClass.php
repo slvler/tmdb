@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * gerekli olan request isteklerinin atıldığı
+ */
+
+
 class RequestClass {
     private $params = array();
 

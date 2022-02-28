@@ -1,7 +1,12 @@
 <?php
 
+/*
+ * gerekli olan xml dosyalarının hazırlandığı
+ *
+ */
 
-class SeederClass extends ConstClass
+
+class SeederClass
 {
     private $firstHash = [];
 
