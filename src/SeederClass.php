@@ -8,9 +8,55 @@
 
 class SeederClass
 {
-    private $firstHash = [];
+    private $firstHash;
+
+    private $order;
 
 
+    private $error;
+
+
+    public function setError()
+    {
+        return $this->error = "hata";
+    }
+
+    public function getOrder(): OrderClass
+    {
+        return $this->order;
+    }
+
+    public function setOrder(OrderClass  $order)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+
+    protected function generateHash()
+    {
+        try {
+            $this->firstHash[] =
+                [
+                'posnetid' => $this->order->getCardName(),
+                'XID' => $this->order->getCcno(),
+                'amount' => $this->order->getFormatAmount(),
+                'currencyCode' => $this->order->getcurrencyCode(),
+                'installment' => $this->order->getInstallment(),
+                 'tranType' => $this->order->getTrantype(),
+                'cardHolderName' => $this->order->getCardName(),
+                'ccno' => $this->order->getFormatCcno(),
+                'expDate' => $this->order->getExpDate(),
+                'cvc' => $this->order->getCvc()
+                ];
+
+            return $this->firstHash;
+        } catch (\Exception $e) {
+            throw new $e->getMessage();
+        }
+    }
+/*
     public function addFirstHash($posnetid, $XID, $amount, $currencyCode, $installment, $tranType, $cardHolderName, $ccno, $expDate, $cvc)
     {
         $this->firstHash[] =
@@ -27,6 +73,7 @@ class SeederClass
             'cvc' => $cvc
             ];
     }
+*/
 
     public function getXml()
     {
@@ -42,8 +89,9 @@ class SeederClass
         $root->appendChild($tid);
 
 
-        foreach ($this->firstHash as $hash) {
-            $senderNode = $this->createParty($xml, 'oosRequestData', $hash['posnetid'],$hash['XID'],$hash['amount'],$hash['currencyCode'],$hash['installment'],$hash['tranType'],$hash['cardHolderName'],$hash['ccno'],$hash['expDate'],$hash['cvc'] );
+        foreach ($this->generateHash() as $hash) {
+            $senderNode = $this->createParty($xml, 'oosRequestData', $hash['posnetid'], $hash['XID'],$hash['amount'],$hash['currencyCode'],$hash['installment'],$hash['tranType'],$hash['cardHolderName'],$hash['ccno'],$hash['expDate'],$hash['cvc'] );
+
             $root->appendChild($senderNode);
         }
 

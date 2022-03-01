@@ -49,6 +49,7 @@ echo $query ->send(); // echos 'username=abc&password=foobar'
 
 require_once "src/ConstClass.php";
 require_once 'src/OrderClass.php';
+require_once 'src/SeederClass.php';
 
 
 
@@ -104,21 +105,36 @@ $xmlCreateData = array(
 );
 */
 
-$order = array(
+$orderData = array(
   'amount' => "123.12",
   'installment' => '1',
   'tranType' =>  'Sale',
   'cardName' => 'John',
   'ccno' => '999 0000          0000 000',
   'expDate' => '123',
-  'cvc' => '999'
+  'cvc' => '999',
+    'currencyCode' => 'TL'
 );
 
-$ord = new OrderClass($order);
+$order = new OrderClass($orderData);
 
-echo $ord->getFormatAmount();
 
-echo $ord->getFormatCcno();
+
+
+$seeder = new SeederClass();
+
+$seeder->setOrder($order);
+$vv = $seeder->getXml();
+print_r($vv);
+
+//$vb = $seeder->generateHash();
+
+//print_r($vb);
+
+
+//echo $ord->getFormatAmount();
+
+//echo $ord->getFormatCcno();
 
 
 ?>

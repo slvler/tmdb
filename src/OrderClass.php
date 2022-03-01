@@ -14,6 +14,7 @@ class OrderClass
     private $ccNo;
     private $expDate;
     private $cvc;
+    private $currencyCode;
 
     public function __construct(?array $OrderClass = [])
     {
@@ -29,6 +30,9 @@ class OrderClass
             $this->setCCno($OrderClass['ccno']);
             $this->setExpDate($OrderClass['expDate']);
             $this->setCvc($OrderClass['cvc']);
+
+
+            $this->setCurrencyCode($OrderClass['currencyCode']);
         }
     }
 
@@ -118,6 +122,16 @@ class OrderClass
         return $this->cvc;
     }
 
+
+    public function setCurrencyCode($value)
+    {
+        $this->currencyCode = $value;
+    }
+
+    public function getCurrencyCode(): string
+    {
+        return $this->currencyCode;
+    }
 
 
 
