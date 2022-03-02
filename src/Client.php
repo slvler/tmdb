@@ -4,11 +4,11 @@
  * sabit değişkenlerin ve verilerin kullanıldığı
  */
 
-require_once "src/repository/Hash.php";
 
-class ConstClass{
 
-    use Hash;
+class Client{
+
+
 
 
     private $PostUrl;

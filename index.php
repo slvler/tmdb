@@ -50,6 +50,7 @@ echo $query ->send(); // echos 'username=abc&password=foobar'
 require_once "src/ConstClass.php";
 require_once 'src/OrderClass.php';
 require_once 'src/SeederClass.php';
+require_once 'src/RequestClass.php';
 
 
 
@@ -124,8 +125,23 @@ $order = new OrderClass($orderData);
 $seeder = new SeederClass();
 
 $seeder->setOrder($order);
-$vv = $seeder->getXml();
-print_r($vv);
+$xml = $seeder->getXml();
+
+
+
+$query = new RequestClass();
+//$query->addParameter("https://setmpos.ykb.com/PosnetWebService/XML?xmldata=", $xml);
+//$sendQuest =  $query->send();
+
+//echo $query->xml_create_request($sendQuest);
+
+$xmlUrl = $api.'?';
+$cre_request = $query->xml_create_request($xmlUrl,$xml);
+
+echo $cre_request;
+
+
+
 
 //$vb = $seeder->generateHash();
 
