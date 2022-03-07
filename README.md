@@ -1,6 +1,18 @@
 
 Posnet-Payment-Service
 ------------
+
+```php
+Composer
+composer require qwerty/posnet-payment-service
+
+```
+
+
+
+
+
+
 ```php
 <?php
 
