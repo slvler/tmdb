@@ -5,9 +5,10 @@
  */
 
 
+namespace qwerty;
 
-class Client{
 
+class Client implements ClientInterface {
 
 
 
@@ -22,22 +23,23 @@ class Client{
     private $ClientUser;
 
 
-    public function __construct(?array $ConstClass = [])
+    private $EncKey;
+
+    public function __construct(Config $config)
     {
-        if ($ConstClass) {
-            $this->setPostUrl($ConstClass['post']);
-            $this->setXmlUrl($ConstClass['api']);
+        $this->setPostUrl($config->getPostUrl());
+        $this->setXmlUrl($config->getApiUrl());
 
-            $this->setTid($ConstClass['tid']);
-            $this->setMid($ConstClass['mid']);
+        $this->setMid($config->getMid());
+        $this->setTid($config->getTid());
 
-            $this->setClientId($ConstClass['clientId']);
-            $this->setClientUser($ConstClass['clientUser']);
-            $this->setClientPass($ConstClass['clientPass']);
-        }
+        $this->setClientId($config->getClientId());
+        $this->setClientUser($config->getClientUser());
+        $this->setClientPass($config->getClientPass());
+
+        $this->setEncKey($config->getEncKey());
+
     }
-
-
 
     function setPostUrl($value)
     {
@@ -58,7 +60,6 @@ class Client{
     {
         return $this->XmlUrl;
     }
-
 
     function setTid($value)
     {
@@ -100,7 +101,6 @@ class Client{
         return $this->ClientPass;
     }
 
-
     function setClientUser($value)
     {
         return $this->ClientUser = $value;
@@ -111,6 +111,15 @@ class Client{
         return $this->ClientUser;
     }
 
+    function setEncKey($value)
+    {
+        return $this->EncKey = $value;
+    }
+
+    function getEncKey(): string
+    {
+        return $this->EncKey;
+    }
 
 
 }

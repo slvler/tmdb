@@ -4,6 +4,10 @@
  * Sepet İşlemleri - sepetten gelen verilerin kontrolü döndürülmesi
  */
 
+
+namespace qwerty;
+
+
 class OrderClass
 {
 
@@ -16,8 +20,11 @@ class OrderClass
     private $cvc;
     private $currencyCode;
 
+    private $client;
+
     public function __construct(?array $OrderClass = [])
     {
+
         if ($OrderClass) {
 
             $this->setAmount($OrderClass['amount']);
@@ -36,7 +43,6 @@ class OrderClass
         }
     }
 
-
     public function setAmount($value)
     {
         $this->amount = $value;
@@ -52,7 +58,6 @@ class OrderClass
         return (int)str_replace('.', '', (string)($this->getAmount() * 100));
     }
 
-
     public function setInstallment($value)
     {
         $this->installment = $value;
@@ -62,7 +67,6 @@ class OrderClass
     {
         return $this->installment;
     }
-
 
     public function setTranType($value)
     {
@@ -99,8 +103,6 @@ class OrderClass
         return (int)str_replace(' ', '', (string)($this->getCcno()));
     }
 
-
-
     public function setExpDate($value)
     {
         $this->expDate = $value;
@@ -111,7 +113,6 @@ class OrderClass
         return $this->expDate;
     }
 
-
     public function setCvc($value)
     {
         $this->cvc = $value;
@@ -121,7 +122,6 @@ class OrderClass
     {
         return $this->cvc;
     }
-
 
     public function setCurrencyCode($value)
     {

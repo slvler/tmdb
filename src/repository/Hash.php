@@ -1,5 +1,8 @@
 <?php
 
+namespace repository;
+
+
 trait Hash
 {
 

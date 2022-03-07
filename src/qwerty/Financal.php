@@ -4,7 +4,9 @@
  * Sepet İşlemleri - sepetten gelen verilerin kontrolü döndürülmesi
  */
 
-class Financal
+namespace qwerty;
+
+class Financal implements FinancalInterface
 {
 
     private $EncKey;
@@ -34,7 +36,6 @@ class Financal
         }
     }
 
-
     public function setEncKey($value)
     {
         return $this->EncKey = $value;
@@ -44,8 +45,6 @@ class Financal
     {
         return $this->EncKey;
     }
-
-
 
     public function setOrderId($value)
     {
@@ -83,8 +82,6 @@ class Financal
         return $this->curreny;
     }
 
-
-
     public function setBankData($value)
     {
         return $this->bank_data = $value;
@@ -105,7 +102,6 @@ class Financal
         return $this->merchantPacket;
     }
 
-
     public function setSing($value)
     {
         return $this->sing = $value;
@@ -116,94 +112,5 @@ class Financal
         return $this->sing;
     }
 
-
-
-
-
-
-
-/*
-
-    public function setInstallment($value)
-    {
-        $this->installment = $value;
-    }
-
-    public function getInstallment(): string
-    {
-        return $this->installment;
-    }
-
-
-    public function setTranType($value)
-    {
-        $this->tranType = $value;
-    }
-
-    public function getTrantype(): string
-    {
-        return $this->tranType;
-    }
-
-    public function setCardName($value)
-    {
-        $this->cardName = $value;
-    }
-
-    public function getCardName(): string
-    {
-        return $this->cardName;
-    }
-
-    public function setCCno($value)
-    {
-        $this->ccNo = $value;
-    }
-
-    public function getCcno(): string
-    {
-        return $this->ccNo;
-    }
-
-    public function getFormatCcno(): int
-    {
-        return (int)str_replace(' ', '', (string)($this->getCcno()));
-    }
-
-
-
-    public function setExpDate($value)
-    {
-        $this->expDate = $value;
-    }
-
-    public function getExpDate(): string
-    {
-        return $this->expDate;
-    }
-
-
-    public function setCvc($value)
-    {
-        $this->cvc = $value;
-    }
-
-    public function getCvc(): string
-    {
-        return $this->cvc;
-    }
-
-
-    public function setCurrencyCode($value)
-    {
-        $this->currencyCode = $value;
-    }
-
-    public function getCurrencyCode(): string
-    {
-        return $this->currencyCode;
-    }
-
-*/
 
 }
