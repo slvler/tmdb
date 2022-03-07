@@ -1,0 +1,6 @@
+{
+    "name": "hs-qwerty/posnet-payment-service",
+    "description": "yapikredi posnet service",
+    "license": "MIT",
+    "require": {}
+}
