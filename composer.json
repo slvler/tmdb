@@ -1,7 +1,0 @@
-{
-    "name": "hs-qwerty/posnet-payment-service",
-    "description": "yapikredi posnet payment service credit cart",
-    "type": "library",
-    "license": "MIT",
-    "require": {}
-}
