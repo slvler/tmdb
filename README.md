@@ -19,3 +19,27 @@ $conf = array(
 ```
 
 
+------------
+```php
+<?php
+
+$orderData = array(
+    'amount' => "x",
+    'installment' => 'x',
+    'tranType' =>  'Sale',
+    'cardName' => 'xxxxx xxxxxxxxx',
+    'ccno' => 'xxxx xxxx xxxx xxxx',
+    'expDate' => 'xxxx',
+    'cvc' => 'xxx',
+    'currencyCode' => 'TL'
+);
+
+
+$order = new OrderClass($orderData);
+
+?>
+```
+
+
+
+
