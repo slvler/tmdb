@@ -3,13 +3,9 @@
     "description": "yapikredi posnet service",
     "license": "MIT",
     "require": {},
-    
-    "autoload":{
-
-
-        "psr-4":{
-
-            "Image\\":"src"
+    "autoload": {
+        "psr-4": {
+            "Qwerty\\PosnetPaymentService\\": "src/"
         }
-    }
+    },
 }
