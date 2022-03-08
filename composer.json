@@ -3,6 +3,7 @@
     "description": "yapikredi posnet payment service",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
      "php": "^7.4 || ^8.0"
     },
