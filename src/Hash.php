@@ -1,6 +1,6 @@
 <?php
 
-namespace repository;
+namespace Qwerty\PosnetPaymentService;
 
 
 trait Hash

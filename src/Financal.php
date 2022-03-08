@@ -4,7 +4,7 @@
  * Sepet İşlemleri - sepetten gelen verilerin kontrolü döndürülmesi
  */
 
-namespace qwerty;
+namespace Qwerty\PosnetPaymentService;
 
 class Financal implements FinancalInterface
 {

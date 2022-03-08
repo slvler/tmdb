@@ -5,7 +5,7 @@
  */
 
 
-namespace qwerty;
+namespace Qwerty\PosnetPaymentService;
 
 
 class OrderClass

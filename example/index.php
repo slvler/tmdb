@@ -1,14 +1,15 @@
 <?php
 
-require_once "autoload.php";
+
+require __DIR__ . '/../vendor/autoload.php';
 
 
-use \qwerty\RequestClass as RequestClass;
-use \qwerty\Client as Client;
-use \qwerty\Config as Config;
-use \qwerty\OrderClass as OrderClass;
-use \qwerty\ResponseClass as ResponseClass;
-use \qwerty\SeederClass as SeederClass;
+//use \qwerty\RequestClass as RequestClass;
+//use \qwerty\Client as Client;
+//use \qwerty\Config as Config;
+//use \qwerty\OrderClass as OrderClass;
+//use \qwerty\ResponseClass as ResponseClass;
+//use \qwerty\SeederClass as SeederClass;
 
 
 
@@ -18,12 +19,14 @@ $conf = array(
     'clientId' => 'xxxx',
     'clientUser' => 'xxxxxxxx',
     'clientPass' => 'xxxxxxxx',
-    'encKey' => 'x,xx,xx,xxx,xxx,xxx,xxx,xxx'
+    'encKey' => 'x,xx,xx,xxx,xx,xx,xx,xxx'
 );
 
 
-$config = new Config($conf);
-$client = new Client($config);
+$config = new Qwerty\PosnetPaymentService\Config($conf);
+$client = new Qwerty\PosnetPaymentService\Client($config);
+
+
 
 
 $orderData = array(
@@ -38,11 +41,13 @@ $orderData = array(
 );
 
 
-$order = new OrderClass($orderData);
+
+
+$order = new Qwerty\PosnetPaymentService\OrderClass($orderData);
 
 
 
-$seed = new SeederClass($config);
+$seed = new Qwerty\PosnetPaymentService\SeederClass($config);
 
 
 $seed->setOrder($order);
@@ -50,7 +55,7 @@ $xmlData = $seed->getXml();
 
 
 
-$query = new RequestClass();
+$query = new Qwerty\PosnetPaymentService\RequestClass();
 
 
 $xmlUrl = 'https://posnet.yapikredi.com.tr/PosnetWebService/XML?';
@@ -62,7 +67,7 @@ $cre_request = $query->xml_create_request($xmlData);
 
 
 
-$reponse = new ResponseClass($cre_request);
+$reponse = new Qwerty\PosnetPaymentService\ResponseClass($cre_request);
 
 
 

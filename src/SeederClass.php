@@ -6,15 +6,15 @@
  */
 
 
-namespace qwerty;
+namespace Qwerty\PosnetPaymentService;
 
-use \repository\Hash as Hash;
+
 use DOMDocument;
 
 class SeederClass extends Client implements SeederInterface
 {
 
-    use Hash;
+   use Hash;
 
 
 
@@ -82,7 +82,7 @@ class SeederClass extends Client implements SeederInterface
     public function getTotalClientHash()
     {
 
-        //$passwor = hashString($orderId . ";" . $vB . ";" . $curreny . ";" . $clientMid . ";". $firstHash);
+ 
 
        $this->secondHash = $this->financal->getOrderId().";".$this->financal->getFormatAmount().";".$this->financal->getCurreny().";".$this->getMid().";".$this->getEncClientHash();
 
@@ -132,11 +132,21 @@ class SeederClass extends Client implements SeederInterface
         return $this->financal->getCurreny();
     }
 
+
+   
+    
+
+
+
     public function getXmlSecond()
     {
+
+      
         $xml = new DOMDocument("1.0", "UTF-8");
         $xml->preserveWhiteSpace = false;
         $xml->formatOutput = true;
+
+       
 
         $root = $xml->createElement("posnetRequest");
         $mid = $xml->createElement('mid', $this->getMid() );
@@ -145,6 +155,7 @@ class SeederClass extends Client implements SeederInterface
         $root->appendChild($mid);
         $root->appendChild($tid);
 
+ 
 
         foreach ($this->generateHashFinancal() as $hash) {
             $senderNode = $this->createPartySecond($xml, 'oosResolveMerchantData', $hash['bankdata'], $hash['merchantData'], $hash['sing'], $hash['mac']);
@@ -152,6 +163,8 @@ class SeederClass extends Client implements SeederInterface
             $root->appendChild($senderNode);
         }
 
+
+      
         $xml->appendChild($root);
 
         return $xml->saveXML();
@@ -189,7 +202,7 @@ class SeederClass extends Client implements SeederInterface
     public function getXID()
     {
 
-        $value = "DRO".strtoupper(substr(md5(microtime()), 0,17));
+        $value = "XXX".strtoupper(substr(md5(microtime()), 0,17));
 
         return $this->orderkey = $value;
 

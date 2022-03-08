@@ -1,16 +1,9 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
 
-require_once "autoload.php";
 
 
-use \qwerty\RequestClass as RequestClass;
-use \qwerty\Client as Client;
-use \qwerty\Config as Config;
-
-use \qwerty\Financal as Financal;
-use \qwerty\ResponseClass as ResponseClass;
-use \qwerty\SeederClass as SeederClass;
 
 
     $orderId = $_POST["Xid"];
@@ -19,7 +12,7 @@ use \qwerty\SeederClass as SeederClass;
     $bank_data = $_POST["BankPacket"];
     $merchantPacket = $_POST["MerchantPacket"];
     $sing = $_POST["Sign"];
-    $encKey = "0,31,17,116,72,45,65,107";
+    $encKey = "x,xx,xx,xxx,xx,xx,xx,xxx";
 
 $financalArr = array(
     'enckey' => $encKey,
@@ -35,8 +28,8 @@ $financalArr = array(
 
 
 
+$financal = new Qwerty\PosnetPaymentService\Financal($financalArr);
 
-$financal = new Financal($financalArr);
 
 
 
@@ -46,24 +39,48 @@ $conf = array(
     'clientId' => 'xxxx',
     'clientUser' => 'xxxxxxxx',
     'clientPass' => 'xxxxxxxx',
-    'encKey' => 'x,xx,xx,xxx,xxx,xxx,xxx,xxx'
+    'encKey' => 'x,xx,xx,xxx,xx,xx,xx,xxx'
 );
 
-$config = new Config($conf);
-$client = new Client($config);
-$seed = new SeederClass($config);
+
+
+
+$config = new Qwerty\PosnetPaymentService\Config($conf);
+
+
+
+
+$client = new Qwerty\PosnetPaymentService\Client($config);
+
+
+
+$seed = new Qwerty\PosnetPaymentService\SeederClass($config);
+
 
 
 
 $financale = $seed->setFinancal($financal);
+
+
+
+
 $xml =  $seed->getXmlSecond();
-$query = new RequestClass();
+
+
+
+$query = new Qwerty\PosnetPaymentService\RequestClass();
+
+
+
 $xmlUrl = 'https://posnet.yapikredi.com.tr/PosnetWebService/XML?';
 $query->setXmlUrl($xmlUrl);
 
+
+
 $cre_request = $query->xml_create_request($xml);
 
-$reponse = new ResponseClass($cre_request);
+$reponse = new Qwerty\PosnetPaymentService\ResponseClass($cre_request);
+
 
 
 $reponse->getRequestClassJson();
@@ -77,7 +94,7 @@ $xmlData = $seed->getFinancalXml();
 
 
 
-$query = new RequestClass();
+$query = new Qwerty\PosnetPaymentService\RequestClass();
 
 
 $xmlUrl = 'https://posnet.yapikredi.com.tr/PosnetWebService/XML?';
@@ -89,7 +106,7 @@ $cre_request = $query->xml_create_request($xmlData);
 
 
 
-$reponse = new ResponseClass($cre_request);
+$reponse = new Qwerty\PosnetPaymentService\ResponseClass($cre_request);
 
 //$finance_response = json_decode(json_encode(simplexml_load_string($cre_request)), true);
 //print_r($finance_response);

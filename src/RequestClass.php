@@ -4,7 +4,7 @@
  * gerekli olan request isteklerinin atıldığı
  */
 
- namespace qwerty;
+namespace Qwerty\PosnetPaymentService;
 
 
 class RequestClass implements RequestInterface {

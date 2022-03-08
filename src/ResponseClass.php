@@ -5,7 +5,7 @@
  *
  */
 
-namespace qwerty;
+namespace Qwerty\PosnetPaymentService;
 
 class ResponseClass implements ResponseInterface
 {
@@ -51,15 +51,15 @@ class ResponseClass implements ResponseInterface
                 </head>
                 <body onLoad="javascript:moveWindow()">
                 <form name="pay_form" method="post" action="'.$post.'" style="display:none;">
-                <input name="mid" type="hidden" id="mid" value="6735527290" />
-                <input name="posnetID" type="hidden" id="PosnetID" value="8822" />
+                <input name="mid" type="hidden" id="mid" value="xxxxxxxxxx" />
+                <input name="posnetID" type="hidden" id="PosnetID" value="xxxx" />
                 <input name="posnetData" type="hidden" id="posnetData" value="'.$this->requestArr->oosRequestDataResponse->data1.'" />
                 <input name="posnetData2" type="hidden" id="posnetData2" value="'.$this->requestArr->oosRequestDataResponse->data2.'" />
                 <input name="digest" type="hidden" id="sign" value="'.$this->requestArr->oosRequestDataResponse->sign.'" />
                 <input name="vftCode" type="hidden" id="vftCode" value="" />
-                <input name="merchantReturnURL" type="hidden" id=" merchantReturnURL" value="https://sanalmagaza.droetker.com.tr/tvt-repice/src/success.php" />
+                <input name="merchantReturnURL" type="hidden" id=" merchantReturnURL" value="example/success.php" />
                 <input name="lang" type="hidden" id="lang" value="tr" />
-                <input name="url" type="hidden" id="url" value="https://sanalmagaza.droetker.com.tr/tvt-repice/src/success.php" />
+                <input name="url" type="hidden" id="url" value="example/success.php" />
                 <input name="openANewWindow" type="hidden" id="openANewWindow" value="0" />
                 <input type="submit" name="Submit" value="Doğrulama Yap" onclick="submitFormEx(formName, 0, "YKBWindow")" />
                 </form>
