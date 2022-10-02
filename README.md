@@ -1,57 +1,23 @@
+# Qwerty - TMDB service
 
-Posnet-Payment-Service
-------------
+An api service for tmdb.com
 
-```php
-Composer
-composer require qwerty/posnet-payment-service
 
+## Installation
+
+To install this package tou can use composer:
+
+```bash
+    composer require qwerty/tmdb-service
 ```
 
 
 
-
-
+## Usage 
 
 ```php
-<?php
 
-$conf = array(
-    'mid' => 'xxxxxxxxxx',
-    'tid' => 'xxxxxxxx',
-    'clientId' => 'xxxx',
-    'clientUser' => 'xxxxxxxx',
-    'clientPass' => 'xxxxxxxx',
-    'encKey' => 'x,xx,xx,xxx,xxx,xxx,xxx,xxx'
-);
+    $tmdb = new Tmdb();
+    $movie = $tmdb->getAll();
 
-  - $config = new Config($conf); 
-
-?>
 ```
-
-
-------------
-```php
-<?php
-
-$orderData = array(
-    'amount' => "x",
-    'installment' => 'x',
-    'tranType' =>  'Sale',
-    'cardName' => 'xxxxx xxxxxxxxx',
-    'ccno' => 'xxxx xxxx xxxx xxxx',
-    'expDate' => 'xxxx',
-    'cvc' => 'xxx',
-    'currencyCode' => 'TL'
-);
-
-
-$order = new OrderClass($orderData);
-
-?>
-```
-
-
-
-

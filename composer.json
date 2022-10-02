@@ -1,21 +1,26 @@
 {
-    "name": "qwerty/posnet-payment-service",
-    "description": "yapikredi posnet payment service",
+    "name": "qwerty/tmdb",
+    "description": "tmdb api",
+    "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Qwerty\\Tmdb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Query\\Tmdb\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
-            "name": "qwerty",
-            "email": "qwerty@qwerty.com"
+            "name": "qwerty"
         }
     ],
-    "autoload": {
-          "psr-4": {
-            "Qwerty\\PosnetPaymentService\\": "src/"
-        }
-    },
     "require": {
-     "php": "^7.4 || ^8.0"
+        "phpunit/phpunit": "^9.5"
     },
+    "require-dev": {},
     "minimum-stability": "dev"
-    
 }

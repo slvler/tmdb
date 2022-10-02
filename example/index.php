@@ -1,79 +1,25 @@
 <?php
 
-
 require __DIR__ . '/../vendor/autoload.php';
 
-
-//use \qwerty\RequestClass as RequestClass;
-//use \qwerty\Client as Client;
-//use \qwerty\Config as Config;
-//use \qwerty\OrderClass as OrderClass;
-//use \qwerty\ResponseClass as ResponseClass;
-//use \qwerty\SeederClass as SeederClass;
+use Qwerty\Tmdb\Client;
+use Qwerty\Tmdb\Tmdb;
 
 
+$option = [
+        'base_url' => "https://api.themoviedb.org/3/movie/550",
+        'api_key' => "b1931f4b871deeec6800ccde48a5f744",
+        'version' => '3'
+    ];
 
-$conf = array(
-    'mid' => 'xxxxxxxxxx',
-    'tid' => 'xxxxxxxx',
-    'clientId' => 'xxxx',
-    'clientUser' => 'xxxxxxxx',
-    'clientPass' => 'xxxxxxxx',
-    'encKey' => 'x,xx,xx,xxx,xx,xx,xx,xxx'
-);
+$client = new Client($option);
+$ext = new Tmdb($client);
 
+//echo $ext->movie("550");
+//echo $ext->people("13");
+//echo $ext->keyword("550");
+//echo $ext->network("550");
+//echo $ext->review("58aa82f09251416f92006a3a");
+//echo $ext->tv("111");
+echo $ext->collection("10");
 
-$config = new Qwerty\PosnetPaymentService\Config($conf);
-$client = new Qwerty\PosnetPaymentService\Client($config);
-
-
-
-
-$orderData = array(
-    'amount' => "x",
-    'installment' => 'x',
-    'tranType' =>  'Sale',
-    'cardName' => 'xxxxx xxxxxxxxx',
-    'ccno' => 'xxxx xxxx xxxx xxxx',
-    'expDate' => 'xxxx',
-    'cvc' => 'xxx',
-    'currencyCode' => 'TL'
-);
-
-
-
-
-$order = new Qwerty\PosnetPaymentService\OrderClass($orderData);
-
-
-
-$seed = new Qwerty\PosnetPaymentService\SeederClass($config);
-
-
-$seed->setOrder($order);
-$xmlData = $seed->getXml();
-
-
-
-$query = new Qwerty\PosnetPaymentService\RequestClass();
-
-
-$xmlUrl = 'https://posnet.yapikredi.com.tr/PosnetWebService/XML?';
-$query->setXmlUrl($xmlUrl);
-
-
-
-$cre_request = $query->xml_create_request($xmlData);
-
-
-
-$reponse = new Qwerty\PosnetPaymentService\ResponseClass($cre_request);
-
-
-
-$arr =  $reponse->getRequestClassJson();
-$rest = $reponse->ResponseRequest();
-echo $rest;
-
-
-?>
