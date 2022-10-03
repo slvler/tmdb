@@ -14,7 +14,7 @@ An api service for tmdb.com
 To install this package tou can use composer:
 
 ```bash
-    composer require qwerty/tmdb-service
+    composer require qwerty/tmdb
 ```
 
 
