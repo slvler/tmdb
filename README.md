@@ -92,3 +92,18 @@ To install this package tou can use composer:
     $TMDB->collection("10");
 
 ```
+
+### Testing
+
+```bash
+vendor\bin\phpunit
+```
+
+## Credits
+
+-   [hs-qwerty](https://github.com/hs-qwerty)
+
+
+## License
+
+The MIT License (MIT). Please see [License File](https://github.com/hs-qwerty/TMDB/blob/main/LICENSE.md) for more information.
