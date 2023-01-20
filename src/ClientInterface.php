@@ -1,6 +1,6 @@
 <?php
 
-namespace Qwerty\Tmdb;
+namespace slvler\tmdb;
 
 interface ClientInterface
 {
