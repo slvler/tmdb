@@ -14,7 +14,7 @@ An api service for tmdb.com
 To install this package tou can use composer:
 
 ```bash
-    composer require qwerty/tmdb
+    composer require slvler/tmdb
 ```
 
 ## Usage 
@@ -101,9 +101,9 @@ vendor\bin\phpunit
 
 ## Credits
 
--   [hs-qwerty](https://github.com/hs-qwerty)
+-   [slvler](https://github.com/slvler)
 
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/hs-qwerty/TMDB/blob/main/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/slvler/slvler/blob/main/LICENSE.md) for more information.

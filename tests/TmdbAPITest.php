@@ -12,8 +12,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $people = $tmdb->movie("550");
 
         $this->assertIsString($people);
@@ -27,8 +27,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $people = $tmdb->people("13");
 
         $this->assertIsString($people);
@@ -42,8 +42,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $keyword = $tmdb->keyword("550");
 
         $this->assertIsString($keyword);
@@ -57,8 +57,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $network = $tmdb->network("550");
 
         $this->assertIsString($network);
@@ -72,8 +72,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $review = $tmdb->review("58aa82f09251416f92006a3a");
 
         $this->assertIsString($review);
@@ -87,8 +87,8 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'version' => '3'
         ];
 
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $tv = $tmdb->tv("111");
 
         $this->assertIsString($tv);
@@ -101,9 +101,9 @@ class TmdbAPITest extends \PHPUnit\Framework\TestCase
             'api_key' => "b1931f4b871deeec6800ccde48a5f744",
             'version' => '3'
         ];
-
-        $client = new \Qwerty\Tmdb\Client($option);
-        $tmdb = new Qwerty\Tmdb\Tmdb($client);
+        
+        $client = new slvler\tmdb\Client($option);
+        $tmdb = new slvler\tmdb\Tmdb($client);
         $collection = $tmdb->collection("10");
 
         $this->assertIsString($collection);
