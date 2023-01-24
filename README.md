@@ -1,8 +1,8 @@
 # Slvler - TMDB service
 
-[![Latest Stable Version](http://poser.pugx.org/qwerty/tmdb/v)](https://packagist.org/packages/qwerty/tmdb)
-[![Latest Unstable Version](http://poser.pugx.org/qwerty/tmdb/v/unstable)](https://packagist.org/packages/qwerty/tmdb)
-[![License](http://poser.pugx.org/qwerty/tmdb/license)](https://packagist.org/packages/qwerty/tmdb)
+[![Latest Stable Version](http://poser.pugx.org/slvler/tmdb/v)](https://packagist.org/packages/slvler/tmdb)
+[![Latest Unstable Version](http://poser.pugx.org/slvler/tmdb/v/unstable)](https://packagist.org/packages/slvler/tmdb)
+[![License](http://poser.pugx.org/slvler/tmdb/license)](https://packagist.org/packages/slvler/tmdb)
 
 
 
