@@ -1,5 +1,6 @@
 # Slvler - TMDB service
 
+[![tests](https://github.com/slvler/tmdb/actions/workflows/tests.yml/badge.svg)](https://github.com/slvler/tmdb/actions/workflows/tests.yml)
 [![Latest Stable Version](http://poser.pugx.org/slvler/tmdb/v)](https://packagist.org/packages/slvler/tmdb)
 [![Latest Unstable Version](http://poser.pugx.org/slvler/tmdb/v/unstable)](https://packagist.org/packages/slvler/tmdb)
 [![License](http://poser.pugx.org/slvler/tmdb/license)](https://packagist.org/packages/slvler/tmdb)
